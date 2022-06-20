@@ -1,0 +1,158 @@
+Index: Team-Germanium/src/main/java/GalaxyGames/Repository/CustomerRepo.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package GalaxyGames.Repository;\r\n\r\nimport GalaxyGames.Model.Customer;\r\nimport org.springframework.data.jpa.repository.JpaRepository;\r\nimport org.springframework.data.jpa.repository.Query;\r\nimport org.springframework.data.repository.query.Param;\r\nimport org.springframework.stereotype.Component;\r\n\r\n@Component\r\npublic interface CustomerRepo extends JpaRepository<Customer, Integer> {\r\n\r\n    @Query(\"FROM Customer where customer_ID = :customer_ID\")\r\n    public Customer findCustomerById(@Param(\"customer_ID\") int id);\r\n\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Team-Germanium/src/main/java/GalaxyGames/Repository/CustomerRepo.java b/Team-Germanium/src/main/java/GalaxyGames/Repository/CustomerRepo.java
+--- a/Team-Germanium/src/main/java/GalaxyGames/Repository/CustomerRepo.java	(revision 2ca590264d1281f779a0271bded4fbf9bc91dc09)
++++ b/Team-Germanium/src/main/java/GalaxyGames/Repository/CustomerRepo.java	(date 1655727401069)
+@@ -12,6 +12,13 @@
+     @Query("FROM Customer where customer_ID = :customer_ID")
+     public Customer findCustomerById(@Param("customer_ID") int id);
+ 
++    @Query("FROM Customer where customerName = :customerName")
++    User findUserByName(@Param("customerName")String name);
++    @Query("FROM User where customerPassword = :customerPassword")
++    User findUserByPassword(@Param("customerPassword")String password);
++
++    @Query("FROM Customer")
++    List<User> findAllUsers();
+ 
+ 
+ }
+Index: Team-Germanium/src/main/java/GalaxyGames/Model/Customer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package GalaxyGames.Model;\r\n\r\n\r\nimport lombok.AllArgsConstructor;\r\nimport lombok.Data;\r\nimport lombok.NoArgsConstructor;\r\nimport lombok.ToString;\r\n\r\nimport javax.persistence.*;\r\n\r\n\r\n@AllArgsConstructor\r\n@NoArgsConstructor\r\n@Data\r\n@ToString\r\n@Entity\r\n\r\n\r\npublic class Customer {\r\n    @Id\r\n    @Column\r\n    @GeneratedValue(strategy = GenerationType.IDENTITY)\r\n    private int customer_ID;\r\n\r\n    @Column\r\n    private String username;\r\n\r\n    @Column\r\n    private String password;\r\n\r\n    @Column\r\n    private String address;\r\n\r\n    @Column\r\n    private String city;\r\n\r\n    @Column\r\n    private String state;\r\n\r\n    @Column\r\n    private String zipcode;\r\n\r\n    @Column\r\n    private String telephone;\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Team-Germanium/src/main/java/GalaxyGames/Model/Customer.java b/Team-Germanium/src/main/java/GalaxyGames/Model/Customer.java
+--- a/Team-Germanium/src/main/java/GalaxyGames/Model/Customer.java	(revision 2ca590264d1281f779a0271bded4fbf9bc91dc09)
++++ b/Team-Germanium/src/main/java/GalaxyGames/Model/Customer.java	(date 1655728229538)
+@@ -20,7 +20,7 @@
+     @Id
+     @Column
+     @GeneratedValue(strategy = GenerationType.IDENTITY)
+-    private int customer_ID;
++    private int customerID;
+ 
+     @Column
+     private String username;
+Index: Team-Germanium/src/main/java/GalaxyGames/Service/CustomerService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package GalaxyGames.Service;\r\n\r\nimport GalaxyGames.Model.Customer;\r\nimport GalaxyGames.Repository.CustomerRepo;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\n\r\npublic class CustomerService {\r\n\r\n    CustomerRepo customerRepo;\r\n\r\n    @Autowired\r\n    public CustomerService(CustomerRepo userRepo){\r\n        this.customerRepo = userRepo;\r\n    }\r\n\r\n    public Customer getCustomerById(int id){\r\n        return customerRepo.findCustomerById(id);\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Team-Germanium/src/main/java/GalaxyGames/Service/CustomerService.java b/Team-Germanium/src/main/java/GalaxyGames/Service/CustomerService.java
+--- a/Team-Germanium/src/main/java/GalaxyGames/Service/CustomerService.java	(revision 2ca590264d1281f779a0271bded4fbf9bc91dc09)
++++ b/Team-Germanium/src/main/java/GalaxyGames/Service/CustomerService.java	(date 1655728229521)
+@@ -4,17 +4,44 @@
+ import GalaxyGames.Repository.CustomerRepo;
+ import org.springframework.beans.factory.annotation.Autowired;
+ 
++@Component
+ public class CustomerService {
+-
+     CustomerRepo customerRepo;
+ 
+     @Autowired
+-    public CustomerService(CustomerRepo userRepo){
+-        this.customerRepo = userRepo;
++    public CustomerService(CustomerRepo customerRepo) {
++        this.customerRepo = customerRepo;
++    }
++
++    public void saveUser(Customer u) {
++        customerRepo.save(u);
+     }
+ 
+-    public Customer getCustomerById(int id){
+-        return customerRepo.findCustomerById(id);
++    public Customer getCustomerById(int id) {
++        return customerRepo.findCustomerByID(id);
++    }
++
++    public Customer getCustomerByName(String name) {
++        return customerRepo.findCustomerByName(name);
++    }
++
++    public List<Customer> getAllCustomers() {
++        return customerRepo.findAllCustomers();
++    }
++
++    public boolean checkCustomerExistsById(int id) {
++        Customer a = customerRepo.findCustomerByID(id);
++        if (a == null) {
++            return false;
++        }
++        return true;
+     }
+ 
+-}
++    public boolean checkCustomerExistsByName(String name) {
++        Customer a = customerRepo.findCustomerByName(name);
++        if (a == null) {
++            return false;
++        }
++        return true;
++    }
++}
+\ No newline at end of file
+Index: Team-Germanium/src/main/java/GalaxyGames/Controller/CustomerController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Team-Germanium/src/main/java/GalaxyGames/Controller/CustomerController.java b/Team-Germanium/src/main/java/GalaxyGames/Controller/CustomerController.java
+new file mode 100644
+--- /dev/null	(date 1655728229544)
++++ b/Team-Germanium/src/main/java/GalaxyGames/Controller/CustomerController.java	(date 1655728229544)
+@@ -0,0 +1,43 @@
++package src.main.java.Application.Controller;
++
++
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.web.bind.annotation.*;
++import src.main.java.Application.Model.Customer;
++import src.main.java.Application.Service.CustomerService;
++
++import java.util.List;
++
++@RestController
++@RequestMapping("customer")
++public class CustomerController {
++    CustomerService customerService;
++    @Autowired
++    public CustomerController(CustomerService customerService){
++        this.customerService = customerService;
++    }
++    @PostMapping
++    public void saveCustomer(@RequestBody Customer u){
++        customerService.saveCustomer(u);
++    }
++    @GetMapping
++    public List<Customer> getAllCustomers(){
++        return customerService.getAllCustomers();
++    }
++    @GetMapping("id/{id}")
++    public Customer getCustomerById(@PathVariable int id){
++        return customerService.getCustomerById(id);
++    }
++    @GetMapping("name/{name}")
++    public Customer getCustomerByName(@PathVariable String name){
++        return customerService.getCustomerByName(name);
++    }
++    @GetMapping("nameexists/{name}")
++    public boolean checkCustomerExistsByName(@PathVariable String name){
++        return customerService.checkCustomerExistsByName(name);
++    }
++    @GetMapping("idexists/{id}")
++    public boolean checkCustomerExistsById(@PathVariable int id){
++        return customerService.checkCustomerExistsById(id);
++    }
++}
