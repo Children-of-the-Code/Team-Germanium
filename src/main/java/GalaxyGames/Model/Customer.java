@@ -16,16 +16,17 @@ import javax.persistence.*;
 @Entity
 
 
+
 public class Customer {
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int customer_ID;
 
-    @Column
+    @Column(unique = true)
     private String username;
 
-    @Column
+    @Column(unique = true)
     private String password;
 
     @Column

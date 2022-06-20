@@ -7,26 +7,26 @@ import lombok.ToString;
 
 import javax.persistence.*;
 
-
+@ToString
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-@ToString
 @Entity
-
-public class Games {
+public class Cart {
     @Id
     @Column
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int game_ID;
-
+    @GeneratedValue( strategy = GenerationType.IDENTITY)
+    private int user_Id;
+    @Column(unique = true)
+    private int checkOut_Id;
     @Column
-    private String name;
-
+    private int product_Id;
     @Column
-    private String description;
+    private  float totalPrice;
 
-    @Column
-    private String price;
+
+
+
+
 
 }

@@ -4,7 +4,6 @@ import GalaxyGames.Model.Games;
 import GalaxyGames.Repository.GameRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
 
 
@@ -13,31 +12,25 @@ public class GameService{
 
     GameRepo gameRepo;
 
-    /** AUTOWIRE - wires a bean to this class
-     * useful in singleton beans
-     * a single object can be shared by multiple objects
-     * **/
 
     @Autowired
     public GameService(GameRepo gameRepo){
         this.gameRepo = gameRepo;
     }
 
+    // TO GET ALL GAMES
     public List<Games> getAllGames() {
-        return gameRepo.findAll();
+        return gameRepo.findAllGames();
     }
 
-    public Games getGameByName(String name) {
-        return gameRepo.findGamesByName(name);
+    // TO GET GAME BY ID
+    public Games getGameById(int id) {
+        return gameRepo.findGameById(id);
     }
 
-    public Games getLastGamesAlphabetically(){
-        return gameRepo.findGamesAlphabetically();
-    }
-
-
-
-    public void deleteGameByName(String name) {
+    // TO CREATE A NEW GAME
+    public void saveGame(Games g) {
+        gameRepo.save(g);
     }
 }
 

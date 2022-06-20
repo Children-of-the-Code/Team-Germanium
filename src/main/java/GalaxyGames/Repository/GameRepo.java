@@ -6,16 +6,22 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Transactional
 public interface GameRepo extends JpaRepository<Games, Integer> {
 
-    @Query("from Games where name = :name")
-    public Games findGamesByName(@Param("name") String name);
+    // TO GET GAMES BY ID
+    @Query("FROM Games where game_ID = :game_ID")
+    Games findGameById(@Param("game_ID") int id);
 
-    @Query("from Games where name = (select max(name) from Games)")
-    public Games findGamesAlphabetically();
+    @Query("FROM Games")
+    List<Games> findAllGames();
 
+    /*
+    @Query("FROM Games where name = (select max(name) from Games)")
+    Games findGamesAlphabetically();
+    */
 
 
 }
