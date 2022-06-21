@@ -23,6 +23,14 @@ public interface GameRepo extends JpaRepository<Games, Integer> {
     @Query("FROM Games WHERE gamename = :gamename")
     Games findGameByName(@Param("gamename") String name);
 
+    // TO GET GAMES BY ID
+    @Query("FROM Games where game_ID = :game_ID")
+    Games findGameById(@Param("game_ID") int id);
+
+    @Query("FROM Games")
+    List<Games> findAllGames();
+
+
     /*
     @Query("FROM Games where name = (select max(name) from Games)")
     Games findGamesAlphabetically();

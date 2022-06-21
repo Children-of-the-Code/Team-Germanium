@@ -26,7 +26,7 @@ public class Customer {
     @Column(unique = true)
     private String username;
 
-    @Column
+    @Column(unique = true)
     private String password;
 
     @Column

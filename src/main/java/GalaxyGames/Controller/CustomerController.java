@@ -35,7 +35,11 @@ public class CustomerController {
 
 
     // TO GET ALL CUSTOMER
+
     @GetMapping("all")
+
+    @GetMapping("customer/all")
+
     public List<Customer> getAllCustomers(){
         return customerService.getAllCustomers();
     }
@@ -56,7 +60,9 @@ public class CustomerController {
 
 
     // TO CREATE A NEW CUSTOMER
-    @PostMapping
+
+    @PostMapping("customer/new")
+
     public void saveCustomer(@RequestBody Customer c){
         customerService.saveCustomer(c);
     }
