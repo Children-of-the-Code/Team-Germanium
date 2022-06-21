@@ -20,8 +20,13 @@ public class Cart {
 
     private int checkout_ID;
 
-    @Column
-    private int product_ID;
+    @ManyToOne
+    @JoinColumn(name = "game_ID")
+    public Games games;
+
+    @ManyToOne
+    @JoinColumn(name = "customer_ID")
+    public Customer customer;
 
     @Column
     private float totalPrice;
