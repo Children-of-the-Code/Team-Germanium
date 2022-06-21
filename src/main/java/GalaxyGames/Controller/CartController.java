@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
 
-// Mohammed's code
+
 
 @RestController
 @RequestMapping("cart")
@@ -35,9 +35,14 @@ public  class CartController {
         return cartService.getCartById(id);
     }
 
-    @GetMapping("{chekout_Id}")
-    public  Cart getCartByCheckOutById(@PathVariable int checkout_Id){
-        return cartService.getCartCheckoutId(checkout_Id);
-        // IS changed letter "o" to lowercase
+    @GetMapping("{game_ID}")
+    public  Cart getCartByGameId(@PathVariable int id){
+        return cartService.getCartByGameId(id);
     }
+
+    @GetMapping("{product_ID}")
+    public  Cart getCartByPurchaseId(@PathVariable int id){
+        return cartService.getCartByPurchaseId(id);
+    }
+
 }

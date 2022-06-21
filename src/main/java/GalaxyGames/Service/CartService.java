@@ -9,8 +9,6 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 
-// Mohammed's code
-
 @Component
 public class CartService {
     CartRepo cartDAO;
@@ -21,16 +19,21 @@ public class CartService {
     public void saveCart(Cart c){
         cartDAO.save(c);
     }
+
     public List<Cart> getAllCarts(){
         return cartDAO.FindAllCart();
     }
+
+
     public  Cart getCartById(int id){
         return cartDAO.FindCartById(id);
 
     }
-    public Cart getCartCheckoutId(int checkout_Id){     // IS changed letter "o" to lowercase
-        return cartDAO.findAllCartCheckOutId(checkout_Id);
+    public Cart getCartByPurchaseId(int id){
+        return cartDAO.findAllCartByPurchaseId(id);
     }
 
-
+    public Cart getCartByGameId(int id){
+        return cartDAO.findAllCartByGameId(id);
+    }
 }

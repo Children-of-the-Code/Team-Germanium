@@ -17,7 +17,6 @@ public class Cart {
     @GeneratedValue( strategy = GenerationType.IDENTITY)
     private int cart_ID;
 
-    private int checkout_ID;
 
     @ManyToOne
     @JoinColumn(name = "game_ID")
@@ -27,21 +26,16 @@ public class Cart {
     @JoinColumn(name = "customer_ID")
     public Customer customer;
 
-    @Column
-    private float totalPrice;
-
-    @Column
-    @GeneratedValue( strategy = GenerationType.IDENTITY)
-    private int user_Id;
-
-    @Column(unique = true)
-    private int checkOut_Id;
-
-    @Column
-    private int product_Id;
+    @ManyToOne
+    @JoinColumn(name = "purchase_ID")
+    public Purchase purchase;
 
     @Column
     private float totalPrice;
+
+
+
+
 
 
 
