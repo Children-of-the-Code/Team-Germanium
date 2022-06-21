@@ -14,15 +14,17 @@ import javax.persistence.*;
 @Entity
 public class Cart {
     @Id
-    @Column
-    @GeneratedValue( strategy = GenerationType.IDENTITY)
-    private int user_Id;
     @Column(unique = true)
-    private int checkOut_Id;
+    @GeneratedValue( strategy = GenerationType.IDENTITY)
+    private int cart_ID;
+
+    private int checkout_ID;
+
     @Column
-    private int product_Id;
+    private int product_ID;
+
     @Column
-    private  float totalPrice;
+    private float totalPrice;
 
 
 

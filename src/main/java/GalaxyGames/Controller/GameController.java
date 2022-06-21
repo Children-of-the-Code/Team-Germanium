@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("games")
 public class GameController {
 
     GameService gameService;
@@ -18,15 +19,21 @@ public class GameController {
     }
 
     // TO GET ALL GAMES
-    @GetMapping("games/all")
+    @GetMapping("all")
     public List<Games> getAllGames(){
         return gameService.getAllGames();
     }
 
-    // TO GET GAMES BY NAME
-    @GetMapping("games/{id}")
+    // TO GET GAMES BY ID
+    @GetMapping("{id}")
     public Games getGameById(@PathVariable int id){
         return gameService.getGameById(id);
+    }
+
+    // TO GET GAMES BY NAME
+    @GetMapping("{name}")
+    public Games getGameByName(@PathVariable String name){
+        return gameService.getGameByName(name);
     }
 
     // TO GET GAMES ALPHABETICALLY
