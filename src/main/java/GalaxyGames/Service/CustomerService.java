@@ -18,6 +18,9 @@ public class CustomerService {
         this.customerRepo = customerRepo;
     }
 
+
+
+
     // TO GET CUSTOMER BY ID
     public Customer getCustomerById(int id){
         return customerRepo.findCustomerById(id);
@@ -32,6 +35,17 @@ public class CustomerService {
     public List<Customer> getAllCustomers(){
         return customerRepo.findAllCustomers();
     }
+
+    //REMOVE FUNCTION
+//    public Customer remove(int id){
+//        if(customerRepo.findCustomerById(id) != null);
+//
+//    }
+
+    //TO DELETE A CUSTOMER BY ID
+//    public Customer deleteCustomerById(int id){
+//        return customerRepo.findCustomerById(id);
+//    }
 
 
     // TO CHECK IF CUSTOMERS EXISTS BY ID
@@ -57,6 +71,15 @@ public class CustomerService {
     public void saveCustomer(Customer c){
         customerRepo.save(c); // save - a JPA method in Spring
 
+    }
+
+    public Customer login(String username, String password){
+        Customer customer = customerRepo.login(username,password);
+        if(customer == null){
+            return null;
+        }else{
+            return customer;
+        }
     }
 
 

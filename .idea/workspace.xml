@@ -5,14 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b591eb3c-0145-4c4b-a7c1-82111f450e9b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Team-Germanium/src/main/java/GalaxyGames/Controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Team-Germanium/src/main/java/GalaxyGames/Model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Team-Germanium/src/main/java/GalaxyGames/Model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Team-Germanium/src/main/java/GalaxyGames/Repository/CustomerRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Team-Germanium/src/main/java/GalaxyGames/Repository/CustomerRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Team-Germanium/src/main/java/GalaxyGames/Service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Team-Germanium/src/main/java/GalaxyGames/Service/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Team-Germanium" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GalaxyGames/Controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GalaxyGames/Controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GalaxyGames/Repository/CustomerRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GalaxyGames/Repository/CustomerRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GalaxyGames/Service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GalaxyGames/Service/CustomerService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,25 +26,34 @@
         <entry key="$PROJECT_DIR$/Team-Germanium" value="Nigel" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Team-Germanium" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
       <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
         <entry key="com.haulmont.jpb.jpaPalette" value="true" />
         <entry key="com.haulmont.jpb.jpaStructure" value="true" />
       </map>
     </option>
     <option name="myId2Visible">
       <map>
-        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
         <entry key="com.haulmont.jpb.jpaStructure" value="false" />
       </map>
     </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="2AqB3xhqL6G3IZg40YZEO0Nx8qU" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -58,8 +67,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="SpringP2" />
         <module name="SpringProject2" />
+        <module name="P2Group" />
       </profile>
     </annotationProcessing>
   </component>

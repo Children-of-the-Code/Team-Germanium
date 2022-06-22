@@ -6,6 +6,7 @@ import GalaxyGames.Service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class CustomerController {
@@ -58,6 +59,11 @@ public class CustomerController {
     @PostMapping("customer/new")
     public void saveCustomer(@RequestBody Customer c){
         customerService.saveCustomer(c);
+    }
+
+    @PostMapping("login")
+    public Customer loginCustomer(@RequestBody Map<String, String> log){
+        return customerService.login(log.get("username"), log.get("password"));
     }
 
 
