@@ -26,6 +26,9 @@ public class Customer {
     @Column(unique = true)
     private String username;
 
+    @Column(unique = true)
+    private String email;
+
     @Column
     private String password;
 

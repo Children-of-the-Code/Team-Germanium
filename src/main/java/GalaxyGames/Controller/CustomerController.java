@@ -58,10 +58,11 @@ public class CustomerController {
     // TO CREATE A NEW CUSTOMER
 
     @PostMapping("register")
-
     public void saveCustomer(@RequestBody Customer c){
         customerService.saveCustomer(c);
     }
+
+
 
 
 }
