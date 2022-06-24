@@ -20,4 +20,6 @@ public interface CustomerRepo extends JpaRepository<Customer, Integer> {
     @Query("FROM Customer")
     List<Customer> findAllCustomers();
 
+    @Query("FROM Customer where username= :username and password= :password")
+    Customer login(@Param("username")String username, @Param("password")String password);
 }

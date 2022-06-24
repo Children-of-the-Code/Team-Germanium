@@ -1,12 +1,14 @@
 package GalaxyGames.Model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @AllArgsConstructor
@@ -46,5 +48,9 @@ public class Customer {
 
     @Column
     private String telephone;
+
+    @OneToMany(mappedBy = "customer")
+    @JsonIgnoreProperties(value = {"customer"})
+    List<Customer> customer;
 
 }
