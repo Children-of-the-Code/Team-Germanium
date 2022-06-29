@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b591eb3c-0145-4c4b-a7c1-82111f450e9b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GalaxyGames/Controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GalaxyGames/Controller/CustomerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/GalaxyGames/Controller/CustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GalaxyGames/Controller/CustomerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GalaxyGames/Model/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GalaxyGames/Model/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GalaxyGames/Repository/CustomerRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GalaxyGames/Repository/CustomerRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GalaxyGames/Service/CustomerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GalaxyGames/Service/CustomerService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
