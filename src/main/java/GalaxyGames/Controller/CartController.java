@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
 
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 
 @RestController
 @RequestMapping("cart")
