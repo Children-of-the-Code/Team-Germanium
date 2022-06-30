@@ -14,7 +14,6 @@ public class CustomerController {
 
     CustomerService customerService;
 
-    // DEPENDENCY INJECTION
     @Autowired
     public CustomerController(CustomerService customerService){
         this.customerService = customerService;
@@ -36,7 +35,8 @@ public class CustomerController {
 
 
     // TO GET ALL CUSTOMER
-    @GetMapping("customer/all")
+
+    @GetMapping("all")
     public List<Customer> getAllCustomers(){
         return customerService.getAllCustomers();
     }
@@ -57,7 +57,8 @@ public class CustomerController {
 
 
     // TO CREATE A NEW CUSTOMER
-    @PostMapping("customer/new")
+
+    @PostMapping("register")
     public void saveCustomer(@RequestBody Customer c){
         customerService.saveCustomer(c);
     }
@@ -66,6 +67,8 @@ public class CustomerController {
     public Customer loginCustomer(@RequestBody Map<String, String> log){
         return customerService.login(log.get("username"), log.get("password"));
     }
+
+
 
 
 }

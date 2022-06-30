@@ -28,6 +28,11 @@ public class GameService{
         return gameRepo.findGameById(id);
     }
 
+    // TO GET GAME BY NAME
+    public Games getGameByName(String name) {
+        return gameRepo.findGameByName(name);
+    }
+
     // TO CREATE A NEW GAME
     public void saveGame(Games g) {
         gameRepo.save(g);
